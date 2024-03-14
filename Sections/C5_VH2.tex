@@ -3,7 +3,7 @@
 Data collected by the ATLAS reconstruction consists of different types of low-level information measured in various sub-detectors. Different processing steps, collectively referred to as \textit{reconstruction}, must be applied to unlock a higher-level physical interpretation of the information: constructing tracks from hit in the silicon detectors, identifying electrons and muons, etc. This section introduces the object selection, listing the recipes applied to identify the different relevant physics objects. The analysis event selection, requiring different reconstructed objects to be identified in data and simulations, is then presented as well as the final categorisation seperating events into defined analysis regions.
 
 \subsection{Object Selection}\label{sec-obj}% TODO when writing the object part of detector, might have to simplify stuff % TODO should I mention truth tagging?
-As introduced in Chapter \ref{chapter-ATLAS}, the ATLAS software allows for different object reconstruction techniques. The reconstruction strategies of the relevant objects to the \vhbc\ analysis are presented in this section. 
+As introduced in Chapter \ref{chapter-ATLAS}, the ATLAS software supports for different object reconstruction techniques. The reconstruction strategy of the relevant objects to the \vhbc\ analysis is presented in this section. 
 
 \paragraph{Primary Vertex:} all events considered in the analysis are required to have at least one primary vertex reconstructed from tracks in the \gls{id} \cite{ATL-PHYS-PUB-2015-026}.
 
@@ -11,7 +11,7 @@ As introduced in Chapter \ref{chapter-ATLAS}, the ATLAS software allows for diff
 
 \begin{table}[!htbp]
   \begin{center}
-    \resizebox{0.99\textwidth}{!}{
+    %\resizebox{0.99\textwidth}{!}{
       \begin{tabular}{ccccccc} \hline \hline
         Selection & $p_T$ & $\eta$ & ID & $d_{0}^{\mathrm sig}$ w.r.t. BL &  $|\Delta{z_{0}}\sin\theta|$ & Isolation \\ \hline
         $VH$-Loose & $>$7 GeV & $|\eta|< 2.47$ & \textit{Loose} & $ <5$ & $<0.5$ mm & Loose \\ % Loose\_VarRad
@@ -19,7 +19,7 @@ As introduced in Chapter \ref{chapter-ATLAS}, the ATLAS software allows for diff
         $WH$-Signal & \multicolumn{2}{c}{Same as $ZH$-Signal} & \textit{Tight} & \multicolumn{2}{c}{Same as $ZH$-Signal} & Strict \\ %HighPtCaloOnly
         \hline\hline
       \end{tabular}
-    }
+    %}
     \caption{Electron Selection requirements.} % TODO Define BL and d0
     \label{tbl:elOb}
   \end{center}
@@ -29,13 +29,13 @@ As introduced in Chapter \ref{chapter-ATLAS}, the ATLAS software allows for diff
 
 \begin{table}[!htbp]
     \begin{center}
-      \resizebox{0.99\textwidth}{!}{
+      \resizebox{\textwidth}{!}{
         \begin{tabular}{ccccccc} \hline \hline
           Selection & $p_T$ & $\eta$ & ID & $d_{0}^{\mathrm sig}$ w.r.t. BL  & $|\Delta{z_{0}}\sin\theta|$ & Isolation \\ \hline
-          $VH$-Loose & $>$7 GeV & $|\eta|< 2.7$ & Loose quality & $ <3$ & $<0.5$ mm & Loose \\ % Loose\_VarRad
+          $VH$-Loose & $>$7 GeV & $|\eta|< 2.7$ & Loose & $ <3$ & $<0.5$ mm & Loose \\ % Loose\_VarRad
           $ZH$-Signal & $>$27 GeV & $|\eta| < 2.5$ & \multicolumn{4}{c}{Same as $VH$-Loose} \\
           %WH-Signal & $>$25 GeV ($>$27 when $p_T^V<$ 150 GeV) & $|\eta|< 2.5$ & Medium quality & $ <3$ & $<0.5$ mm & HighPtTrackOnly \\
-          $WH$-Signal & \makecell[c]{$>$25 GeV if $p_T^V>$ 150 GeV\\ $>$27 GeV if $p_T^V<$ 150 GeV} & $|\eta|< 2.5$ & Medium quality & $ <3$ & $<0.5$ mm & Strict \\
+          $WH$-Signal & \makecell[c]{$>$25 GeV if $p_T^V>$ 150 GeV\\ $>$27 GeV if $p_T^V<$ 150 GeV} & $|\eta|< 2.5$ & Medium & $ <3$ & $<0.5$ mm & Strict \\
           \hline\hline
         \end{tabular}
       }
