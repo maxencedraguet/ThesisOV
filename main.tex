@@ -11,23 +11,28 @@
 \author{Maxence DRAGUET}
 \title{DPhil Thesis}
 \begin{document}
-
+\AddToShipoutPicture*{\BackgroundPic}
 \begin{titlepage}
-\pagecolor{oxfordblue}    
 
+\newgeometry{left=2cm,right=2cm, top=2 cm, bottom=2 cm}
+%\pagecolor{oxfordblue}    
+ 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \center 
-\vspace*{2cm}
+\vspace*{4cm}
 \textsc{\LARGE \color{white} University of Oxford}\\
 \textsc{\large \color{white} Lincoln College}\\[1cm]
 \textit{\large \color{white} Thesis submitted for the degree of} \\
 \textsc{\Large \color{white} Doctor of Philosophy}\\[2cm]
 
 %{\LARGE \bfseries \color{white} DPhil Thesis\\[0.7cm]} 
-{\color{white} \HRule \HRule} \\[0.4cm]
-\textsc{\huge \bfseries \color{white} advanced machine learning algorithms for heavy flavour jets identification and higgs searches with the atlas experiment}\\[0.4cm] 
+%{\color{white} \HRule \\ \HRule} \\[0.4cm]
+%{\color{white} \HRule } \\[0.4cm]
+\textsc{\huge \bfseries \color{white} advanced machine learning algorithms for heavy flavour jets identification and higgs boson searches with the atlas experiment}\\[0.4cm] 
 %\textsc{\huge \bfseries \color{white} Advanced Machine Learning Applications for Higgs Searches and Heavy Flavour Quarks Identification at ATLAS}\\[0.4cm] 
-{\color{white} \HRule \HRule}\\[1.5cm]
+%{\color{white} \HRule \\ \HRule}\\[2cm]
+%{\color{white} \HRule }\\
+\vfil
 \color{white}
     \begin{minipage}{0.4\textwidth}
     \begin{center}
@@ -39,14 +44,16 @@
     \end{center}
     \end{minipage}
 
-\vfill 
+\vfil
 \begin{figure}[b]
 \centering
 %{\large \color{white} 2020-2024}\\[1cm]
-{\large \color{white} Trinity \\MMXXIV}\\[1cm]
+\textsc{\color{white} trinity \\MMXXIV}\\[1cm]
 \includegraphics[scale=0.15]{Images/Oxford_Logo.png}
 \end{figure}
 \end{titlepage}
+
+\restoregeometry
 \pagecolor{white}    
 
 \newpage
@@ -67,8 +74,8 @@
 
 {
 \cleardoublepage
-\vspace*{-2\baselineskip}
-\printnoidxglossary[style=mcolindex,type=acronym,title=Abbreviations]
+
+\printnoidxglossary[style=mcolindex,type=acronym,title={\vspace*{-1cm}Abbreviations\vspace*{-3cm}}]
 }
 \end{singlespace}
 }
@@ -116,10 +123,9 @@
 
 \newpage
 \begin{appendices}
-%\input{Appendices/A_FTAG.tex}
-%\newpage
-%\input{Appendices/B_VH.tex}
-%\input{Appendices/B_VHbb_regPresPosfit.tex}
+\input{Appendices/A_FTAG.tex}
+\newpage
+\input{Appendices/B_VH.tex}
 
 \end{appendices}
 \end{singlespace}
