@@ -14,7 +14,7 @@
 %%BIBLIO%%
 \usepackage[
     %backend=biber,
-    style=numeric,
+    style=numeric-comp,
     sorting=none
 ]{biblatex}
 \usepackage{caption}
@@ -40,7 +40,9 @@
 \usepackage{qtree} % for trees
 \usepackage{rotating} % for landscape figure
 \usepackage{subcaption}
-\usepackage{setspace} \doublespacing % for double spacing of main text lines
+\usepackage{setspace} 
+  \doublespacing % for double spacing of main text lines
+  %\linespread{1.25} % equivalent to 1.5 line spacing in word
 \usepackage{tabulary}
 \usepackage{tasks}
 \usepackage{titlesec}
@@ -67,7 +69,8 @@
     filecolor=magenta,      
     urlcolor=blue,
 	anchorcolor=red,
-	linktocpage
+  linktoc=all
+	%linktocpage
 }
 
 % Footnotes
@@ -152,9 +155,9 @@
             align=center,
             anchor=north east
           ] 
-          at ($ (current page.north east) + (-0cm,-2*\thechapshift cm) $) 
-          {\rotatebox{90}{\hspace*{1.35cm}\parbox[c][1.75cm][t]{3.cm}{%
-              \raggedright\textcolor{white}{\\\scshape \thechapter}}}};
+          at ($ (current page.north east) + (-0cm,-3*\thechapshift cm) $) 
+          {\rotatebox{90}{\hspace*{1.35cm}\parbox[c][1.75cm][c]{3.cm}{%
+              \raggedright\textcolor{white}{\scshape \vspace{0.9cm}\thechapter}}}};
         \end{tikzpicture}%
       }%
     }  
@@ -170,9 +173,9 @@
           align=center,
           anchor=north east
         ] 
-        at ($ (current page.north east) + (-0cm,-2*\thechapshift cm) $) 
-        {\rotatebox{90}{\hspace*{1.35cm}\parbox[c][1.75cm][t]{3.cm}{%
-            \raggedright\textcolor{white}{\\\scshape \thechapter}}}};
+        at ($ (current page.north east) + (-0cm,-3*\thechapshift cm) $) 
+        {\rotatebox{90}{\hspace*{1.35cm}\parbox[c][1.75cm][c]{3.cm}{%
+            \raggedright\textcolor{white}{\scshape \vspace{0.9cm}\thechapter}}}};
         \end{tikzpicture}%
       }%
     }  

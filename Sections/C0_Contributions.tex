@@ -1,0 +1,36 @@
+%\vspace{-4cm}
+\chapter*{\color{oxfordblue} Personal Contributions}
+
+The work presented in this thesis is inherentely collaborative, having been carried out as a member of the ATLAS Collaboration. This thesis present the two subjects to which I mostly contributed: the development of new heavy flavour taggers and the \vhbc\ combined analysis using the full Run 2. While I produced some ``ATLAS'' labelled figures, others were taken from public results produced by other member of the Collaboration. Plots with no label have always been personally produced. This section aims to highlight my personal contributions to these different projects that are fully detailed in this thesis.
+
+\subsubsection{Flavour Tagging}
+I joined the flavour tagging group for my qualification task, and have contributed to the training of the new taggers. My main contributions are:
+\begin{itemize}
+    \item Producing training samples with new ATLAS software release (R22)
+    \item Modifications to the preprocessing to implement importance sampling when harmonising distributions of different flavour samples for full statistics use.
+    \item Modifications to the training software to include taus, flexible input variables definition, and general debugging.
+    \item Modifications to the postprocessing to implement new visualisation and grapics. 
+    \item Retraining DL1r on the new R22 release and comparing it to the previous DL1r. 
+    \item First training of DL1d with the DIPS subtagger on release R22. This was done for both PFlow and variable-radius (VR) jets.
+    \item Studying the inputs and architecture of DL1d. 
+    \item Training the DIPS subtagger with VR jets (used in the above step).
+    \item Studies of hyperparameter optimisation of GN1 and GN2, with modifications the software stack to leverage the $\mu P$ parametrisation and implement the $\mu$Transfer algorithm.
+    \item Adapting the codebase and developing a framework to train on CERN's KubeFlow server. 
+\end{itemize}
+These different contributions lead me to significantly participate in the development of the \textsc{Umami} \cite{UmamiCite} and \textsc{Salt} \cite{SaltCite} software used to train the network. My contributions have been part of different ATLAS publications, such as Ref. \cite{ATL-PHYS-PUB-2022-027} using a DL1r model I trained, Ref. \cite{ATL-PLOT-FTAG-2023-01} using a DL1d model I trained, Ref. \cite{ATL-PHYS-PUB-2023-021} for which I produced the DL1d input to the $X_{bb}$, as well as a coming ATLAS publication on GN2. I led the effort on hyperparameter optimisation of GN2, producing the public results in Ref. \cite{publicplotMUP} presented at the $6^{th}$ Inter-Experimental Machine Learning Workshop \cite{IMLTalk} and the Cloud-Native AI Day KubeCon conference \cite{KubeconTalk}.
+
+\subsubsection{\boldvhbc\ Analysis}
+I joined the \vhbc\ analysis team in 2021, and my main contributions are:
+\begin{itemize}
+    \item Study of the $X_{bb}$ tagger versus a looser DL1r for the boosted \vhb\ regime, with the impact on the signal sensitivity after dedicated MVA trainings analysed.
+    \item Studies of the Data-Monte Carlo agreement in \vhc\ with DL1r-based tagging. 
+    \item Contributing to different rounds of analysis samples productions.
+    \item Design and study of a new top control region for the \vhc\ and \vhb\ resolved. Extensive list of studies to reach the final approach presented in this thesis. Additional study on the Higgs candidate reconstructions strategy.
+    \item Derivation and harmonisation of the \ptv-dependent $\Delta R_{cc}$ cut in \vhc.
+    \item Training and deployement of the CARL model for the single-top $Wt$- and $t$-channels of the top background for the resolved \vhb.
+    \item Development of the analysis modelling codebase to study the top backgrounds. 
+    \item Modelling studies of the top background in the resolved \vhb. Derived shape and acceptance uncertainties for \ttb, $Wt$, and $t$-channel, and studied the effect of the chosen modeling and the combination of \ttb\ with $Wt$. 
+    \item Numerous fit studies to validate new samples, the new top control region and top backgrounds normalisation scheme, the new Higgs candidate reconstruction strategy, as well as studying the impact of the introduction of CARL models and refinements to modelling. 
+    \item Modification to the fit framework to use the new ROOT version and help stabilise the fit, as well integrating an update to the results visualisation and plots made.
+\end{itemize}
+At the time of writing, the analysis is reaching its conclusion with final studies on the modelling and fit framework, aiming for publication by June 2024. The results presented here are therefore only temporary and still blinded.

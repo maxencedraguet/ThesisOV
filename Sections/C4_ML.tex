@@ -386,7 +386,7 @@ The first modification to the \gls{dnn} considered in this thesis are Recurrent 
 \begin{equation}\label{eq:rnnModel}
     y_t = W(h_t) = W(V(x_t) + U(h_{t-1})),
 \end{equation}
-where $U$, $V$, and $W$ are three, potentially different, \gls{dnn}s mapping taking at timestep $t$ respectively the previous hidden state $h_{t-1}$, the current input token $x_t$ and the new hidden state $h_t = V(x_t) + U(h_{t-1})$. The initial hidden state $h_0$ is usually initiated from a special mapping from the whole input $x$. An interesting feature of such a network is its ability to build an internal memory of previous inputs up to a timestep $T$ thanks to the chain of hidden states $h_{t<T}$. To avoid having too large (exploding) or small (vanishing) gradients, which would not correctly update the weights of the model during gradient descent, the $tanh$ function is often used as activation in \gls{rnn} thanks to its smooth distribution and limitation to the range $[-1, 1]$. Unfortunately, due to the network relying on repetitive multiplications of numbers in the range $[-1, 1]$, the effect of much earlier timestep ($h_{t<<T}$) can be lost when processing later input at $T$. This process is referred to as \textit{memory loss}. This undesired property is remedied with several architectural modifications to \gls{rnn} that improve their operational memory, of which the two main ones are \gls{lstm} and \gls{gru}.
+where $U$, $V$, and $W$ are three, potentially different, \glspl{dnn} mapping taking at timestep $t$ respectively the previous hidden state $h_{t-1}$, the current input token $x_t$ and the new hidden state $h_t = V(x_t) + U(h_{t-1})$. The initial hidden state $h_0$ is usually initiated from a special mapping from the whole input $x$. An interesting feature of such a network is its ability to build an internal memory of previous inputs up to a timestep $T$ thanks to the chain of hidden states $h_{t<T}$. To avoid having too large (exploding) or small (vanishing) gradients, which would not correctly update the weights of the model during gradient descent, the $tanh$ function is often used as activation in \gls{rnn} thanks to its smooth distribution and limitation to the range $[-1, 1]$. Unfortunately, due to the network relying on repetitive multiplications of numbers in the range $[-1, 1]$, the effect of much earlier timestep ($h_{t<<T}$) can be lost when processing later input at $T$. This process is referred to as \textit{memory loss}. This undesired property is remedied with several architectural modifications to \gls{rnn} that improve their operational memory, of which the two main ones are \gls{lstm} and \gls{gru}.
 
 \begin{figure}[h!]
     \center
@@ -433,11 +433,11 @@ The Gated Recurrent Unit (\gls{gru}) is another advantageous design to improve t
 \end{itemize}
 
 \subsection{Convolutional Neural Networks}
-Convolutional Neural Networks (\gls{cnn}) \cite{NIPS198953c3bce6, NIPS2012_c399862d} have emerged as a powerful class of deep learning models that are particularly effective in computer vision tasks, including image and video analysis. The architecture of \gls{cnn}s is roughly based on human visual processing. It consists of convolutional layers - implementing the fundamental convolution operation-, pooling layers, and feed-forward layers (\gls{dnn}). This architecture, presented in Figure~\ref{fig:cnnDesign}, enables \gls{cnn} to automatically learn hierarchical representations of features while respecting properties of image-based data: spaciality (pixels have a position), locality (pixel share information within their neighbourhood), and symmetries (rotational, reflection, translation, etc.).
+Convolutional Neural Networks (\gls{cnn}) \cite{NIPS198953c3bce6, NIPS2012_c399862d} have emerged as a powerful class of deep learning models that are particularly effective in computer vision tasks, including image and video analysis. The architecture of \glspl{cnn} is roughly based on human visual processing. It consists of convolutional layers - implementing the fundamental convolution operation-, pooling layers, and feed-forward layers (\gls{dnn}). This architecture, presented in Figure~\ref{fig:cnnDesign}, enables \gls{cnn} to automatically learn hierarchical representations of features while respecting properties of image-based data: spaciality (pixels have a position), locality (pixel share information within their neighbourhood), and symmetries (rotational, reflection, translation, etc.).
 
 \begin{figure}[h!]
     \center
-    \includegraphics[scale=0.5]{Images/ML/cnn.png}
+    \includegraphics[width=0.8\textwidth]{Images/ML/cnn.png}
     \caption{A layer of a convolutional neural network, implementing a convolution with 4 kernels followed by a pooling operation. This design can be stacked to create deep architecture, and combined with a feed-forward neural network, after flattening the output at some depth, before reaching the final loss function layer. In this example, the receptive field size is 4 and there are 4 different kernels used to analyse an input image of size 7 $\times$ 7.} 
     \label{fig:cnnDesign}
 \end{figure}
@@ -464,12 +464,12 @@ For example, for an image of size 100 $\times$ 100, a \gls{dnn} would require 10
 \end{itemize}
 
 \subsection{Graph Neural Networks}\label{chapter-GNN}
-In the last few years, \gls{gnn} have gained significant attention for their ability to model and analyse complex relationships within graph-structured data \cite{graphNetRef}. Originally designed for tasks such as node classification and link prediction, \gls{gnn}s have found applications in diverse domains such as social networks modelling, recommendation systems, and physics, for modelling the dynamic of a $N$-body system, performing tracks reconstruction, and identifying particles.\\
-\gls{gnn}s operate on graph-structured data, where nodes or vertices represent entities, and edges represent relationships between these entities. The functioning of \gls{gnn}s involves iterative aggregation of information from neighbouring nodes and updating of the edges, allowing them to capture local and global structures as defined by the graph. This is achieved through the use of message-passing mechanisms. An interesting feature of graphs is that the input information does not need to be given a rigid structure. Consequently, graph-based methods have a much greater representation power than image- or sequence-based ones. Graphs are in fact able to represent arbitrary relational structures, as defined by the graph through its directional weighted edges \cite{graphInductiveBias}. A particular feature arising from this property is that graphs are permutation equivariant: the order of nodes can be rearranged without impact. \\
+In the last few years, \gls{gnn} have gained significant attention for their ability to model and analyse complex relationships within graph-structured data \cite{graphNetRef}. Originally designed for tasks such as node classification and link prediction, \glspl{gnn} have found applications in diverse domains such as social networks modelling, recommendation systems, and physics, for modelling the dynamic of a $N$-body system, performing tracks reconstruction, and identifying particles.\\
+\glspl{gnn} operate on graph-structured data, where nodes or vertices represent entities, and edges represent relationships between these entities. The functioning of \glspl{gnn} involves iterative aggregation of information from neighbouring nodes and updating of the edges, allowing them to capture local and global structures as defined by the graph. This is achieved through the use of message-passing mechanisms. An interesting feature of graphs is that the input information does not need to be given a rigid structure. Consequently, graph-based methods have a much greater representation power than image- or sequence-based ones. Graphs are in fact able to represent arbitrary relational structures, as defined by the graph through its directional weighted edges \cite{graphInductiveBias}. A particular feature arising from this property is that graphs are permutation equivariant: the order of nodes can be rearranged without impact. \\
 
 \begin{figure}[h!]
     \center
-    \includegraphics[scale=0.5]{Images/ML/gnn.png}
+    \includegraphics[width=\textwidth]{Images/ML/gnn.png}
     \caption{A graph neural network update on a directed graph $G(V, E, u)$ with a global representation $u$, four initial nodes $\in V$ and edges $e_{ij} \in E$ connecting nodes $i \rightarrow j$ (in the notation of the text, each node is given a different integer index $k$ and written $(e_k, r_k, s_k)$, with $r_k = j$ and $s_k = i$). By analysing the neighbours of each node, the graph is updated to a new graph $G^*(V^*, E^*, u^*)$.} 
     \label{fig:gnnScheme}
 \end{figure}
@@ -516,7 +516,7 @@ The most general graph update algorithm to describe an update stage of a full \g
     \item The set of vertices is updated by a global pooling $\overline{v^*} = \rho^{v \rightarrow u}(V^*)$.
     \item The global representation is updated by \gls{dnn} $\phi^u$ mapping $u^* = \phi^u(\overline{e^*}, \overline{v^*}, u)$, with the globally pooled updated edges ($\overline{e^*}$) and vertices ($\overline{v^*}$). 
 \end{itemize} 
-This formulation of a graph as a message-passing with edges update device is the most complete architecture of a \gls{gnn}. The design is however flexible: for example, \gls{rnn}s or \gls{cnn}s can be used instead of \gls{dnn}. Furthermore, many specialisations of the structures exist to reduce the degree of complexity of the model and avoid overfitting or convergence issues, as listed in Figure~\ref{fig:diverseGNN}. A notable example for this thesis is the Deep Set architecture \cite{NIPS2017f22e4747}, designed to run specifically on sets where the ordering does not matter. It essentially simplifies the graph network by dropping altogether the edges and considering instead a fully connected graph with static edges, with an update of the global representation only based on pooled node information: 
+This formulation of a graph as a message-passing with edges update device is the most complete architecture of a \gls{gnn}. The design is however flexible: for example, \glspl{rnn} or \glspl{cnn} can be used instead of \glspl{dnn}. Furthermore, many specialisations of the structures exist to reduce the degree of complexity of the model and avoid overfitting or convergence issues, as listed in Figure~\ref{fig:diverseGNN}. A notable example for this thesis is the Deep Set architecture \cite{NIPS2017f22e4747}, designed to run specifically on sets where the ordering does not matter. It essentially simplifies the graph network by dropping altogether the edges and considering instead a fully connected graph with static edges, with an update of the global representation only based on pooled node information: 
 \[v^*_i = \phi^v(\overline{e^*_i}, v_i, u) = \phi^v(v_i, u),\] 
 \[\overline{V^*} = \rho^{v \rightarrow u} = \sum_i v^*_i,\] 
 \[u^* = \phi^u(\overline{e^*}, \overline{v^*}, u) = \phi^u( \overline{v^*}, u).\] This is somewhat similar to PointNet, a \gls{gnn} designed to analyse sets of 3D points, that uses an analogous update with max-aggregation instead of sum pooling after updating the nodes in two steps \cite{pointNet}.  
@@ -558,14 +558,14 @@ A different approach introduced in \cite{nlnnPaper} defines the non-local neural
 
 \paragraph{Pros:}
 \begin{itemize}
-    \item \textit{Modeling Graph Structure:} \gls{gnn}s naturally handle graph-structured data, making them well-suited for tasks involving relationships between entities.
+    \item \textit{Modeling Graph Structure:} \glspl{gnn} naturally handle graph-structured data, making them well-suited for tasks involving relationships between entities.
     \item \textit{Transferability:} Pre-trained \gls{gnn} models on one graph can be fine-tuned for related tasks on another graph.
-    \item \textit{State-of-the-Art Performance:} \gls{gnn}s have achieved state-of-the-art results in various graph-related tasks, including node classification and link prediction.
+    \item \textit{State-of-the-Art Performance:} \glspl{gnn} have achieved state-of-the-art results in various graph-related tasks, including node classification and link prediction.
 \end{itemize}
 
 \paragraph{Cons:}
 \begin{itemize}
-    \item \textit{Computational Complexity:} Training \gls{gnn}s can be computationally expensive, particularly for large graphs.
+    \item \textit{Computational Complexity:} Training \glspl{gnn} can be computationally expensive, particularly for large graphs.
     \item \textit{Limited Global Context:} Some \gls{gnn} architectures may struggle to capture long-range dependencies in graphs, limiting their ability to consider global context.
     \item \textit{Interpretability:} Similar to other deep learning models, \gls{gnn} lack interpretability, making it challenging to understand the learned representations.
 \end{itemize}
@@ -578,7 +578,7 @@ The Transformer architecture is based on the mechanism of self-attention introdu
 
 \begin{figure}[h!]
     \center
-    \includegraphics[scale=0.5]{Images/ML/transformer.png}
+    \includegraphics[width=0.9\textwidth]{Images/ML/transformer.png}
     \caption{The full transformer architecture, combining an encoder and a decoder each made of an arbitrary number of layers. The input $x$ is first embedded with a dedicated mapping which can, when order matters, be supplemented with positional embedding. The encoder generates an internal representation $h$ that is passed to the decoder. This component, depicted on the right, produces the next output using the internal representation $y$ and the output shifted to the right - to force output tokens to only access prior information.} 
     \label{fig:tranfoArchi}
 \end{figure}

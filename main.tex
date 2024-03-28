@@ -4,6 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makenoidxglossaries
+\vspace{-2cm}
 \input{utils/glossary.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,19 +18,20 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \center 
 \vspace*{2cm}
-\textsc{\LARGE \color{white} University of Oxford}\\[0.5cm] 
+\textsc{\LARGE \color{white} University of Oxford}\\
 \textsc{\large \color{white} Lincoln College}\\[1cm]
-\textsc{\Large \color{white} Doctorate of Philosophy}\\[0.3cm]
-\textsc{\large \color{white} Particle Physics}\\[2cm]
+\textit{\large \color{white} Thesis submitted for the degree of} \\
+\textsc{\Large \color{white} Doctor of Philosophy}\\[2cm]
 
 %{\LARGE \bfseries \color{white} DPhil Thesis\\[0.7cm]} 
-{\color{white} \HRule} \\[0.4cm]
-\textsc{\huge \bfseries \color{white} Advanced Machine Learning Applications for Higgs Searches and Heavy Flavour Quarks Identification at ATLAS}\\[0.4cm] 
-{\color{white} \HRule}\\[1.5cm]
+{\color{white} \HRule \HRule} \\[0.4cm]
+\textsc{\huge \bfseries \color{white} advanced machine learning algorithms for heavy flavour jets identification and higgs searches with the atlas experiment}\\[0.4cm] 
+%\textsc{\huge \bfseries \color{white} Advanced Machine Learning Applications for Higgs Searches and Heavy Flavour Quarks Identification at ATLAS}\\[0.4cm] 
+{\color{white} \HRule \HRule}\\[1.5cm]
 \color{white}
     \begin{minipage}{0.4\textwidth}
     \begin{center}
-    \textsc{Candidate\\[0.2cm]
+    \textsc{Author\\[0.2cm]
     \Large Maxence DRAGUET}\\[0.3cm]
     \textsc{Supervisor\\[0.2cm]
     \Large Daniela BORTOLETTO}\\
@@ -40,54 +42,73 @@
 \vfill 
 \begin{figure}[b]
 \centering
-{\large \color{white} 2020-2024}\\[1cm]
+%{\large \color{white} 2020-2024}\\[1cm]
+{\large \color{white} Trinity \\MMXXIV}\\[1cm]
 \includegraphics[scale=0.15]{Images/Oxford_Logo.png}
 \end{figure}
 \end{titlepage}
 \pagecolor{white}    
 
+\newpage
+{\pagestyle{plain}
+\pagenumbering{gobble}
+\input{Sections/C0_Abstract}
+\input{Sections/C0_Contributions.tex}
+}
+
 {
 \begin{singlespace}
 \pagestyle{plain}
+\pagenumbering{gobble}
+\begingroup
+\hypersetup{linkcolor=black}
 \tableofcontents
+\endgroup
 
-\newpage
-\printnoidxglossary[style=mcolindex,type=acronym,title=List of Abbreviations]
+{
+\cleardoublepage
+\vspace*{-2\baselineskip}
+\printnoidxglossary[style=mcolindex,type=acronym,title=Common Abbreviations]
+}
 \end{singlespace}
 }
 
-%\newpage
-%\input{Sections/C0_Abstract}
-
-%\newpage
-%\input{Sections/C1_Intro}
+\newpage
+\pagenumbering{arabic}
+\input{Sections/C1_Intro}
 
 \newpage
-%\input{Sections/C2_Theory}
+\input{Sections/C2_Theory}
 
-%\newpage
+\newpage
 \input{Sections/C3_ATLAS}
 
-%\newpage
-%\input{Sections/C4_ML}
+\newpage
+\input{Sections/C4_ML}
 
-%\newpage
-%\input{Sections/C4_FTAG}
-%\input{Sections/C4_FTAG2}
-%\input{Sections/C4_FTAG3}
+\newpage
+\input{Sections/C4_FTAG}
+\input{Sections/C4_FTAG2}
+\input{Sections/C4_FTAG3}
 
-%\newpage
-%\input{Sections/C5_VH1}
-%\input{Sections/C5_VH2}
-%\input{Sections/C5_VH3}
-%\input{Sections/C5_VH4}
-%\input{Sections/C5_VH5}
+\newpage
+\input{Sections/C5_VH1}
+\input{Sections/C5_VH2}
+\input{Sections/C5_VH3}
+\input{Sections/C5_VH4}
+\input{Sections/C5_VH5}
+
+\newpage
+\input{Sections/C6_Conclusion}
 
 \clearpage
 
 \newpage
 {\pagestyle{plain}
 \begin{singlespace}
+%\renewcommand\ChapFrame{}
+\setcounter{chapter}{8}
+\ChapFrame
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
