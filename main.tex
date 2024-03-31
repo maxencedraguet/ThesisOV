@@ -53,6 +53,22 @@
 \end{figure}
 \end{titlepage}
 
+\newpage
+{
+\begin{titlepage}
+\pagenumbering{gobble}
+\AddToShipoutPicture*{\AddBackgroundPic}
+\begingroup
+\hypersetup{citecolor=silver}
+\vspace*{\fill}
+\begin{center}
+\hspace{-1cm}
+\textsc{\color{silver} ARTISTIC REPRESENTATION OF THE HIGGS POTENTIAL BY CERN \cite{Dominguez:2815837}}
+\end{center}
+\endgroup
+\end{titlepage}
+}
+
 \restoregeometry
 \pagecolor{white}    
 
@@ -110,10 +126,8 @@
 
 \clearpage
 
-\newpage
 {\pagestyle{plain}
 \begin{singlespace}
-%\renewcommand\ChapFrame{}
 \setcounter{chapter}{8}
 \ChapFrame
 \addcontentsline{toc}{chapter}{Bibliography}

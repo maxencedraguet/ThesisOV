@@ -8,32 +8,6 @@
 %This section gives further details on the triggers used in the combined analysis presented in Chapter \ref{chap-VH}.
 %\input{Tables/VH/TriggerTable.tex}
 
-\section{Flavour Tagging Calibrations}\label{appsec-vh-ftagcal}
-This section presents some results on the calibration of the flavour tagger used in the combined \vhbc\ analysis. Figure \ref{appfig:FTAG_calibration_resolved} shows some efficiency scale factors in the resolved regime for the different main flavours, while Figure \ref{appfig:FTAG_calibration_boosted} displays the same information for the boosted tagger.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagres/DL1r_AntiKt4EMPFlowJets_BTagging201903_Continuous2D_B_410470_30_eta01.pdf}
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagres/DL1r_AntiKt4EMPFlowJets_BTagging201903_Continuous2D_C_410470_30_eta01.pdf}\\
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagres/DL1r_AntiKt4EMPFlowJets_BTagging201903_Continuous2D_Light_410470_30_eta01.pdf}
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagres/DL1r_AntiKt4EMPFlowJets_BTagging201903_Continuous2D_Light_410470_30_eta01.pdf}
-    \caption{Efficiency scale factors calibration results of the DL1r \gls{pcft} tagger on PowhegPythia8 \ttb\ samples for the resolved regime of the \vhbc. The scale factors of $\tau$-jets are from $c$-jet calibration. From the internal documentation.
-    }
-    \label{appfig:FTAG_calibration_resolved}
-\end{figure}
-   
-\begin{figure}
-    \centering
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagboo/DL1r_AntiKtVR30Rmax4Rmin02TrackJets_BTagging201903_Continuous_B_410470_77_85_eta01.pdf}
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagboo/DL1r_AntiKtVR30Rmax4Rmin02TrackJets_BTagging201903_Continuous_C_410470_77_85_eta01.pdf}
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagboo/DL1r_AntiKtVR30Rmax4Rmin02TrackJets_BTagging201903_Continuous_Light_410470_77_85_eta01.pdf}
-    \includegraphics[width=0.48\textwidth]{Images/VH/Obj/FTAGCalib/ftagboo/DL1r_AntiKtVR30Rmax4Rmin02TrackJets_BTagging201903_Continuous_T_410470_77_85_eta01.pdf}
-    \caption{ Example of the boosted \vhb\ efficiency scale factor calibration results of the DL1r tagger on PowhegPythia8 \ttb\ samples for the $77\%<\epsilon_j<85\%$ bin. The scale factors of $\tau$-jets are from $c$-jet calibration. From the internal documentation.}
-    \label{appfig:FTAG_calibration_boosted}
-\end{figure}
-
-
-\clearpage
 \section{Analysis Categorisation}\label{ap-vhCat}
 This section offers more details in two elements of the categorisation in the resolved regime: the $\Delta R$ cut and the resolved top CR for the 0- and 1-lepton channels.
 
@@ -47,20 +21,20 @@ The angular separation between the two candidate jets $\Delta R(j_1, j_2)$, as d
 The results of these fits for the 1L channel are displayed in Figure~\ref{fig:drccptvCutsVHcc}, showing the signal yield in a 2-dimensional histogram ($p_T^V$ vs $\Delta R_{c\bar{c}}$) for different tags applied. Cuts derived on the \vhc\ selected events showed good agreement with the \vhb\ derived cuts. The $VH(H\rightarrow b\bar{b})$ cuts is chosen so that the kinematic selection of the two analyses is harmonised. \\
 
 \subsection{Resolved Top Control Region in 0L and 1L}
-The top control region (topCR) is used to constrain the rather significant top background that peaks at signal-like values of the discriminant variables. Indeed, when the candidate jets selected correspond to the $b$- and $c$-jet from a $t\bar{t}$ decay, the invariant mass of the pair peaks at 120 GeV, exactly the region of interest for a Higgs decay search. The topCR is defined by requiring at least one $c$-tagged jet in combination with at least one $b$-tagged jet using the \textit{AllSignal} strategy, as previously described. This tagging requirement renders it orthogonal to the signal region of the analysis and targets the decay topology of the different top processes: 
+The top control region (TopCR) is used to constrain the rather significant top background that peaks at signal-like values of the discriminant variables. Indeed, when the candidate jets selected correspond to the $b$- and $c$-jet from a $t\bar{t}$ decay, the invariant mass of the pair peaks at 120 GeV, exactly the region of interest for a Higgs decay search. The TopCR is defined by requiring at least one $c$-tagged jet in combination with at least one $b$-tagged jet using the \textit{AllSignal} strategy, as previously described. This tagging requirement renders it orthogonal to the signal region of the analysis and targets the decay topology of the different top processes: 
 \begin{itemize}
 \item Semi-leptonic $t\bar{t}$ decay: both $t$ follow the usual decay chain  $t \rightarrow b$ + $W$, with one of the $W$ decaying leptonically and the other one to a pair of quarks. Some events from this process can enter the signal region when some quarks are $c$-tagged or if the $b$-jets are mis-tagged or flew out of the detector acceptance. Requiring the combination of a $b$-tag and a $c$-tag effectively selects this process, the $b$ coming from the direct $t$ decay and the $c$ from a subsequent $W$ decay. 
 \item Single top $t$-quark: predominantly the $Wt$ process $W$ $t \rightarrow W$ +  $b$ + $W$, with one $W$ decaying leptonically and the other hadronically. Some of these background events can enter the signal region if the $b$- is missed and if a jet is $c$-tagged, from the extra $W$ or if the $b$-jet is mis-tagged. Events from the single-top $t$- and $s$-channel of the process $t \rightarrow b$ + $W$ bring a smaller contribution, as the $c$-tagged jet must come from \textit{Initial State Radiation} (ISR) or \textit{Final State Radiation} (FSR) if the $b$ is not mis-tagged. Single-top is a minor background in 0L and 1L, with the main component being the production of $Wt$ pairs. The $t$-channel and $s$-channel contribute less than 1\% of the total background.
 \end{itemize}
 
-Of the two processes, the $t\bar{t}$ is therefore the most important one and a main background in the 0L and 1L channels. Due to their similarities, the $t\bar{t}$ and $Wt$ processes are considered as a single \textit{top} background in the analysis. In 2L, because this top background is small, no flavour-based topCRs are introduced and a different strategy is employed where the top is directly constrained in a pure top-$e\mu$ control region defined by requiring two charged leptons of different flavours. For the 0L and 1L channels, the expected top background normalisation and its kinematic distributions, as given by the MC simulation, are adjusted using data in the topCRs; this is extrapolated to the signal regions under consideration of extrapolation effects (and corresponding extrapolation uncertainties) that account for differences between the topCRs and SRs. \\
+Of the two processes, the $t\bar{t}$ is therefore the most important one and a main background in the 0L and 1L channels. Due to their similarities, the $t\bar{t}$ and $Wt$ processes are considered as a single \textit{top} background in the analysis. In 2L, because this top background is small, no flavour-based TopCRs are introduced and a different strategy is employed where the top is directly constrained in a pure top-$e\mu$ control region defined by requiring two charged leptons of different flavours. For the 0L and 1L channels, the expected top background normalisation and its kinematic distributions, as given by the MC simulation, are adjusted using data in the TopCRs; this is extrapolated to the signal regions under consideration of extrapolation effects (and corresponding extrapolation uncertainties) that account for differences between the TopCRs and SRs. \\
 
 The combined top background is separated into different components, depending on the true flavour of the two candidate jets, that can be combined during the statistical analysis. These are:
 \begin{itemize}
 \item top($bb$): in this case, the two $b$-jets produced during the $t\bar{t}$ decay are selected. This is a small component in the signal regions of the $VH(H\rightarrow c\bar{c})$ analysis, due to the 70\% efficiency WP for $b$-tagging and the low mis-tag rate for $b$-jets in $c$-tagging. Naturally, in $VH(H\rightarrow b\bar{b})$ it is the leading contribution. Due to the origin of the candidate jets, a large $\Delta R_{b\bar{b}}$ is expected between the two $b$-jets so this component is most effectively constrained by the High $\Delta R$ CR. 
-\item top($bc$): where the $b$ is from a $t$ decay and the $c$ from a subsequent $W$ hadronic decay (or from ISR/FSR though this is less likely). Given the definition of the topCR, this is the dominating component in that region and the most important to constrain in the signal regions of the $VH(H\rightarrow b\bar{b}/c\bar{c})$ analyses due to its signal-like kinematics. 
-\item top($bl$): where $l$ stands for anything not $b$ nor $c$ (light jets predominantly but also some mis-tagged hadronic $\tau$). This component is similar to the top($bc$) as it also consists of a $b$ + a jet from the $W$ and can end up in the SRs and topCRs due to mis-tags.
-\item top($lq$): where $l$ is as above and $q$ can be any sort of jet except a $b$. This is a small component that mostly accumulates in the background-like part of the BDT score distribution. It is not constrained in the high $\Delta R$ regions nor the topCRs.
+\item top($bc$): where the $b$ is from a $t$ decay and the $c$ from a subsequent $W$ hadronic decay (or from ISR/FSR though this is less likely). Given the definition of the TopCR, this is the dominating component in that region and the most important to constrain in the signal regions of the $VH(H\rightarrow b\bar{b}/c\bar{c})$ analyses due to its signal-like kinematics. 
+\item top($bl$): where $l$ stands for anything not $b$ nor $c$ (light jets predominantly but also some mis-tagged hadronic $\tau$). This component is similar to the top($bc$) as it also consists of a $b$ + a jet from the $W$ and can end up in the SRs and TopCRs due to mis-tags.
+\item top($lq$): where $l$ is as above and $q$ can be any sort of jet except a $b$. This is a small component that mostly accumulates in the background-like part of the BDT score distribution. It is not constrained in the high $\Delta R$ regions nor the TopCRs.
 \end{itemize}
 The signal region distributions in the 1L channel in the $p_T^V$ range $[150, 250]$ GeV are displayed in Section \ref{appsec-vh-analRegPosfit} of the Appendix. While the top is not the dominant background, except in the tighter tagged TT 3-jet region, its relative contribution to the background composition increases at signal-like values of the discriminant. \\
 
@@ -70,10 +44,9 @@ The components contributing the most in the \vhc\ side of the analysis are the t
 \item 2-jet: \quad BL: $BL$;  \quad BT: $BT$
 \item 3-jet: \quad BL: $BLN$, $BLL$;  \quad BT: $BTN$, $BTL$, $BTT$, and $BBT$
 \end{itemize}
-In the \textit{AllSignal} strategy, the Higgs candidates in the topCR are always the highest $p_T$ $b$- and $c$-tagged jets. This selection was observed to make the top control region distributions more closely match the distributions in the signal regions. For the fit, only the $BT$ region is used, as it provides sufficient control on the important top background components. The $BL$ region is only used to validate the, assessing the data-\gls{mc} agreement after correcting the yields of the major backgrounds, as is shown in Figure \ref{fig:val_BLtopCR}. \\
+In the \textit{AllSignal} strategy, the Higgs candidates in the TopCR are always the highest $p_T$ $b$- and $c$-tagged jets. This selection was observed to make the top control region distributions more closely match the distributions in the signal regions. For the fit, only the $BT$ region is used, as it provides sufficient control on the important top background components. The $BL$ region can however be studied to assess the data-\gls{mc} agreement after correcting the yields of the major backgrounds from the fit, as is shown in Figure \ref{fig:val_BLTopCR}. \\
 
-
-For $VH(H\rightarrow c\bar{c})$, the $bc$ and $bl$ components are the most important to constrain. In $VH(H\rightarrow b\bar{b})$, while the $bc$ component is also significant and can benefit from the topCRs, the most important contribution comes from the $bb$ one and is well constrained by the High $\Delta R$ CR, since in a $t\bar{t}$ decay the two produced $b$-jets tend to be separated by a large $\Delta R$ due to the event topology. For the Combined Analysis, the SRs and CRs of both analyses are considered simultaneously. The High $\Delta R$ CR from \vhb\ are used to constrained the residual top$(bb)$ component in \vhc. \\
+For $VH(H\rightarrow c\bar{c})$, the $bc$ and $bl$ components are the most important to constrain. In $VH(H\rightarrow b\bar{b})$, while the $bc$ component is also significant and can benefit from the TopCRs, the most important contribution comes from the $bb$ one and is well constrained by the High $\Delta R$ CR, since in a $t\bar{t}$ decay the two produced $b$-jets tend to be separated by a large $\Delta R$ due to the event topology. For the Combined Analysis, the SRs and CRs of both analyses are considered simultaneously. The High $\Delta R$ CR from \vhb\ are used to constrained the residual top$(bb)$ component in \vhc. \\
 
 \newpage
 \subsection{Truth Tagging}\label{app-truth-tagging}

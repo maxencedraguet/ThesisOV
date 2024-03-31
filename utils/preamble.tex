@@ -13,7 +13,8 @@
 \usepackage{array}
 %%BIBLIO%%
 \usepackage[
-    %backend=biber,
+    backend=biber,
+    %backend=bibtex,
     style=numeric-comp,
     sorting=none
 ]{biblatex}
@@ -26,6 +27,7 @@
 \usepackage[Sonny]{fncychap}
 \usepackage{float}
 \usepackage[T1]{fontenc}
+\usepackage[bottom]{footmisc} % for bottom footnotes
 \usepackage{fullwidth}
 \usepackage{gensymb}
 \usepackage[left=3 cm, right=2 cm, top=2 cm, bottom=2 cm]{geometry}
@@ -58,6 +60,7 @@
 \definecolor{greenforest}{RGB}{34,139,34}
 \definecolor{darkbrown}{RGB}{63, 42, 20}
 \definecolor{darkgrey}{RGB}{105,105,105}
+\definecolor{silver}{RGB}{192, 192, 192}
 \definecolor{darkpink}{RGB}{219,112,147}
 
 % Biblio
@@ -83,6 +86,18 @@
       \vfill
       \centering
       \includegraphics[width=1.05\paperwidth,height=1.02\paperheight]{Images/background3.pdf}
+      \vfill
+    }
+  }
+}
+
+% For crazy background 2
+\newcommand\AddBackgroundPic{
+  \put(-0.5cm,-0.01cm){
+    \parbox[b][\paperheight]{\paperwidth}{%
+      \vfill
+      \centering
+      \includegraphics[width=1.02\paperwidth,height=1.01\paperheight]{Images/firstpage.pdf}
       \vfill
     }
   }

@@ -2,6 +2,24 @@
 \ChapFrame
 \textit{This Appendix lists some additional results in support of Chapter \ref{chap-ftag}.}
 
+\section{Understanding DIPS}\label{app-DIPS-perf}
+\begin{figure}[h!]
+  \center
+  \begin{minipage}[c]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{Images/FTAG/dipsSaliency.png}
+  \end{minipage}
+  \begin{minipage}[c]{0.25\textwidth}
+    \caption{Saliency map for $b$-tagging with 8 tracks sorted by $|S_{d_0}|$ and indexed by $i$, showing the gradient of the discriminant $D_b$ with respect to the $k$ track features $x_{ik}$ \cite{ATL-PHYS-PUB-2020-014}.} 
+  \label{fig:dipsSaliency}
+  \end{minipage}
+\end{figure}
+
+How does \gls{dips} work under the hood? The interpretability of machine learning models is an active area of research. Several effective approaches exist to gauge the importance of the input on the prediction. Figure~\ref{fig:dipsSaliency} presents the result of applying the \textit{saliency maps} technique \cite{Simonyan2013DeepIC}. Using the $b$-tagging discriminant $D_b$ of Equation \ref{bdisc} at a fixed efficiency of 77\%, the average importance of each feature in the track inputs is assessed by averaging the gradient of the discriminant with respect to the track features over a set of $N$ jets with strictly 8 associated tracks failing the threshold:
+\begin{equation}
+  \frac{\partial D_b}{\partial x_{ik}} = \frac{1}{N} \sum_{j=1}^N \frac{\partial D_b^{j}}{\partial x_{ik}^{j}},
+\end{equation} 
+where $i$ indexes the 8 tracks, $j$ indexes the jet in the sample of size $N$, $x_{ik}$ is the $k^{th}$ feature of the $i^{th}$ track \cite{ATL-PHYS-PUB-2020-014}. This process effectively probes the linear sensitivity of the discriminant on the track features. Using the saliency map, one can infer what features to modify to correct the failed tag assigned to the $b$-jets sample. The most sensitive parameters are measured to be the \gls{ip} significances of the first five tracks, and the logarithm of the $p_T^{\textrm{frac}}$ and $\Delta R$ of the track with largest $|s_{d_0}|$. This observation is physically motivated by the dynamic of the harder fragmentation of $b$-quarks, compared to light- and $c$-quarks. Negative gradients are measured for shared and split hits observables, translating into a further incorrect discriminant under a linear increase of these features. This is also physically motivated, as higher counts can be traced back to denser event environments where random combinations of hits to form tracks are more likely. However, total hit counts in the different tracker layers have a small positive impact, as these correlate with the reconstruction of the \gls{ip} parameters.
+
 \section{DIPS with Variable Radius Jets}\label{ap-DIPSVR}
 This section of the Appendix displays more information on the variable radius (\gls{vr}) jet training of \gls{dips}. The samples distributions are shown in Figure \ref{apfig:vrjetdist}.
 
@@ -145,3 +163,5 @@ Figures \ref{apfig:GNxptc_efffixedl} presents the $c$- and light-rejection at an
     \caption{Comparing the different models light-rejection as a function of jet $p_T$ for the $c$-tagging inclusive 30\% working point on the $t\bar{t}$ (left) and  $Z'$ (right). The flavour fraction is set at $f^c_b = 0.2$ for all taggers.}
     \label{apfig:GNxptc_urej}
   \end{figure} 
+
+  \input{Appendices/GN2x.tex}

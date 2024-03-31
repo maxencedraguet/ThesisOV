@@ -8,5 +8,6 @@ rm main.l*
 rm main.o*
 rm main.r*
 rm main.s*
+rm main-blx.bib
 rm main.toc
 rm pdf*

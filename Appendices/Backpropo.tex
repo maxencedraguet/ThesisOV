@@ -1,0 +1,17 @@
+
+: \[ x \xrightarrow{\times W^1 + b^1} z^1 \xrightarrow{f^1()} a^1 \xrightarrow{\times W^2 + b^2} z^2 \xrightarrow{f^2()} a^2 \xrightarrow{\times W^3 + b^3} ... \xrightarrow{\times W^d + b^d} a^d = \hat{y},\] the loss is then computed $\mathcal{L}(y, \hat{y} | x, W^1, b^1, W^2, b^2, ..., W^d, b^d)$ 
+
+before computing the gradient of each layer by starting from the output:\[\text{grad}_{W^d, b^d} = \nabla_{W^d, b^d} \mathcal{L} \rightarrow \text{grad}_{W^{d-1}, b^{d-1}} = \nabla_{W^{d-1}, b^{d-1}} \text{grad}_{W^d, b^d} \rightarrow ... \rightarrow \nabla_{W^{1}, b^1} \text{grad}_{W^2}, \]
+where the operation $\text{grad}_{W^{d-1}, b^{d-1}} = \nabla_{W^{d-1}, b^{d-1}} \text{grad}_{W^d, b^{d}}$ implies a use of the chain rule to obtain the local gradient, based on information already obtained. In the context of \gls{dl}, the chain rule of multivariate calculus offers a transformation:
+\begin{equation}
+    \frac{\partial h}{\partial x} = \frac{\partial h}{\partial z}\frac{\partial z}{\partial x},
+\end{equation}
+for a function $h: \mathbb{R}^n \rightarrow \mathbb{R}^m$, composed by two functions $h = g \circ f$ defined as $f: \mathbb{R}^n \rightarrow \mathbb{R}^k$, $g: \mathbb{R}^k \rightarrow \mathbb{R}^m$, with $x \in \mathbb{R}^n$ and $z = f(x) \in \mathbb{R}^k$. Two types of updates are necessary: 
+\begin{itemize}
+    \item For a layer $l$, the activation can be unpacked: \[\frac{\partial l}{\partial z^l} = \frac{\partial l}{\partial a^l} \frac{\partial a^l}{\partial z^l}\]
+    \item For a layer $l$ having access to next layer $l+1$ $(\frac{\partial l}{\partial z^{l+1}})$: \[\frac{\partial l}{\partial z^l} = \frac{\partial l}{\partial z^{l+1}} \frac{\partial z^{l+1}}{\partial z^l} = \frac{\partial l}{\partial z^{l+1}} \frac{\partial z^{l+1}}{\partial a^l} \frac{\partial a^l}{\partial z^l}, \] but since $z^{l+1} = W^{l+1}a^l + b^{l+1}$, this reduces to:\[\frac{\partial l}{\partial z^l} = \frac{\partial l}{\partial z^{l+1}} W^{l+1} \frac{\partial a^l}{\partial z^l}, \]
+
+    \item Combining the two above, we can compute $\frac{\partial l}{\partial z^l}$ for each layer in backward order. One thus now requires the derivative with respect to the per-layer weights: \[\frac{\partial l}{\partial W^l} = (a^{l-1} \frac{\partial l}{\partial z^l})^T,\] 
+    
+    for the weight matrix - an outer product between a row vector $\frac{\partial l}{\partial z^l}$ and a column vector $a^{l-1}$. For the bias: \[\frac{\partial l}{\partial b^l} = \frac{\partial l}{\partial z^l},\] the result is directly obtained from the row vector. 
+\end{itemize}
