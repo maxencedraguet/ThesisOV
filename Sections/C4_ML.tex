@@ -230,8 +230,10 @@ The Artificial Neuron or \textit{perceptron}, as initially named by its inventor
     \label{fig:annModel}
 \end{figure}
 
-\paragraph{} The interest in artificial neurons stems from a significant theoretical result: stacks of artificial neurons are \textit{universal function approximator} \cite{universalFuncApproxNN,HORNIK1989359}, as shown in the next section. This theoretical result is built on a mathematically advantageous function chosen for $f$: the sigmoid $\sigma$, defined in equation \ref{eq:sigmoid} and shown in Figure~\ref{fig:sigmoid}:
-
+\paragraph{} The interest in artificial neurons stems from a significant theoretical result: stacks of artificial neurons are \textit{universal function approximator} \cite{universalFuncApproxNN,HORNIK1989359}, as shown in the next section. This theoretical result is built on a mathematically advantageous function chosen for $f$: the sigmoid $\sigma$, illustrated in Figure~\ref{fig:sigmoid} and defined as
+\begin{equation}\label{eq:sigmoid}
+    \sigma(x) = \frac{1}{1 + e^{-x}}.
+\end{equation}
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
         \includegraphics[width=0.4\textwidth]{Images/ML/sigmoid.png}
@@ -239,9 +241,6 @@ The Artificial Neuron or \textit{perceptron}, as initially named by its inventor
         \label{fig:sigmoid}
     \end{center}
 \end{wrapfigure}
-\begin{equation}\label{eq:sigmoid}
-    \sigma(x) = \frac{1}{1 + e^{-x}}.
-\end{equation}
 
 Thanks to its property to map the set of real numbers to the [0, 1] range, this activation function is often used for numerical stability and probability distribution mappings. An essential mathematical property of the sigmoid, particularly relevant for \gls{dl}, is the ease to compute its derivative: \[\sigma^\prime(x) = \sigma(x) (1- \sigma(x)).\]
 
@@ -297,7 +296,6 @@ which is satisfied by the sigmoid function. This result can be applied outside t
     with the hyperparameter $\alpha > 0$.
     \item The softmax function which, for an $x \in \mathbb{R}^n$, return a vector softmax$(x) = [..., \frac{e^{x_i}}{Z}, ...]$ with $Z = \sum_i e^{x_i}$. For a 2-dimensional $x$, the softmax is equivalent to the sigmoid. In $n$-dimension, it maps each entry of $x$ to the range $[0, 1]$ and guarantees $\sum_i $softmax$(x)_i = 1$. The softmax is therefore helpful to define probability distributions over multidimensional outputs.
 \end{itemize}
-
 \begin{wrapfigure}{R}{0.5\textwidth}
     \begin{center}
         \includegraphics[width=0.45\textwidth]{Images/ML/activations.png}
@@ -625,7 +623,7 @@ Regularisation techniques are applied in the architecture and training procedure
 Several characteristics of the network need to be optimised: 
 \begin{itemize}[leftmargin=*]
     \item \textit{Architecture Selection:} choosing the right architecture is crucial for the success of a \gls{nn}. Factors to consider include the complexity of the task, the nature of the data, and the desired trade-off between model complexity and interpretability. Limits in computing power should be factored in. Elements of the architecture include the type of \gls{ml} chosen (\gls{bdt}, \gls{dnn}, transformer, ...), the choice of activation functions (\gls{relu}, tanh, ...), and the number of layers, nodes, and connexions between the units.
-    \item \textit{Hyperparameter Tuning:} optimising the hyperparameters - parameters that are not optimised through backpropagation of the loss - is essential for achieving the best possible performance. Key hyperparameters include optimiser-related parameters such as the learning rate, the batchsize, regularisation parameters, and initialisation of the weights and biases.
+    \item \textit{Hyperparameter Tuning:} optimising the hyperparameters - parameters that are not optimised through backpropagation of the loss - is essential for achieving the best possible performance. Key hyperparameters include optimiser-related parameters such as the learning rate, the batch size, regularisation parameters, and initialisation of the weights and biases.
 \end{itemize}
 The optimisation process for both hyperparameter tuning and architecture selection is expensive: the model must be trained with different combinations of hyperparameters or architecture to evaluate their respective performance and uncover the best-performing options. Techniques such as grid search, random search, and Bayesian optimisation can be employed to efficiently explore the hyperparameter space. Architecture search is usually performed by trial and error, with the \gls{ml} literature offering little insight into what models might best perform in specific situations. 
 
