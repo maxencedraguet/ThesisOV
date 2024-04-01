@@ -23,6 +23,10 @@ where $i$ indexes the 8 tracks, $j$ indexes the jet in the sample of size $N$, $
 \section{DIPS with Variable Radius Jets}\label{ap-DIPSVR}
 This section of the Appendix displays more information on the variable radius (\gls{vr}) jet training of \gls{dips}. The samples distributions are shown in Figure \ref{apfig:vrjetdist}.
 
+\section{DL1d with Variable Radius Jets}\label{ap-DL1dVR}
+This section presents some plots on the VR-training of DL1d. Figure \ref{apfig:DL1dVRscanf} displays some flavour fractions scans for the $b$-tagging and $c$-tagging. 
+
+\clearpage
 \begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.98\textwidth}
@@ -53,12 +57,9 @@ This section of the Appendix displays more information on the variable radius (\
       \caption{Graviton sample.} 
       \label{apfig:vrjetdisgr}
   \end{subfigure}
-  \caption{Distributions for the \gls{vr}-jet training of jets $p_T$ (left) and $|\eta|$ (right) for the hybrid combined process (top row) made from the three bottom processes, in the order $t\bar{t}$, $Z'$, and the graviton.}
+  \caption{Distributions for the \gls{vr}-jet training of jets $p_T$ (left) and $|\eta|$ (right).}
   \label{apfig:vrjetdist}
 \end{figure} 
-
-\section{DL1d with Variable Radius Jets}\label{ap-DL1dVR}
-This section presents some plots on the VR-training of DL1d. Figure \ref{apfig:DL1dVRscanf} displays some flavour fractions scans for the $b$-tagging and $c$-tagging. 
 
 \begin{figure}[h!]
   \centering
@@ -82,32 +83,31 @@ This section presents some plots on the VR-training of DL1d. Figure \ref{apfig:D
   \label{apfig:DL1dVRscanf}
 \end{figure} 
 
+\newpage
 \section{GN2 public plots}
-A comparison of the global performance of this \gls{gn2} model to the \gls{dl1d} and \gls{gn1} models is displayed in the $b$- and $c$-tagging \gls{roc} curves of Figures \ref{fig:GN2rocb} and \ref{fig:GN2rocc}. These results are taken from Ref \cite{ATL-PLOT-FTAG-2023-01}, for which the \gls{dl1d} model was retrained on the same dataset as \gls{gn2}, and the \gls{dl1r} and \gls{gn1} models are taken from Chapter \ref{chap-GN1}. \gls{gn2} delivers yet another significant boost to performance, drasticaly surpassing the \gls{gn1} rejections at all efficiencies considered. The largest improvement is again obtained at lower $b$-jet efficiencies. Compared to \gls{gn1}, \gls{gn2} delivers $\times 1.5$ ($\times 1.7$) the $c$-rejection (light-rejection) on $t\bar{t}$ at the 70\% $b$-tagging \gls{wp} and $\times 1.75$ ($\times 1.2$) on $Z'$ at 30\% \gls{wp}. With respect to \gls{dl1d}, the gains in $c$-rejection (light-rejection) are respectively close to $\times 3$ ($\times 2$) for $t\bar{t}$ and $\times 3.4$ ($\times 4$) on $Z'$. 
-
-\begin{center}
-    \vspace{-1.cm}
-    \begin{figure}[h!]
-    \centerline{
-    \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/ttb.png}
-    \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/zpb.png}
-    }
-    \caption{The $c$- and light-rejections as a function of the $b$-jet tagging efficiency in the $t\bar{t}$ with $20 < p_T < 250$ GeV (left) and $Z'$ with $250 < p_T < 6000$ GeV (right) test samples, from \cite{ATL-PLOT-FTAG-2023-01}. Models compared are DL1d in orange, GN1 in turquoise, and GN2 in blue. The bottom plots show the ratio with respect to the DL1d performance. Flavour fractions are set at $f^b_c = 0.018$ for DL1d, 0.05 for GN1, and 0.1 for GN2. Shaded regions represent the binominal error band.}
-    \label{apfig:GN2rocb}
-    \bigskip
-    \centerline{
-    \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/ttc.png}
-    \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/zpc.png}
-    }
-    \caption{The $b$- and light-rejections as a function of the $c$-jet tagging efficiency in the $t\bar{t}$ with $20 < p_T < 250$ GeV (left) and $Z'$ with $250 < p_T < 6000$ GeV (right) test samples, from \cite{ATL-PLOT-FTAG-2023-01}. Models compared are DL1d in orange, GN1 in turquoise, and GN2 in blue. The bottom plots show the ratio with respect to the DL1d performance. Flavour fractions are set at $f^c_b = 0.2$ for all taggers. Shaded regions represent the binominal error band.}
-    \label{apfig:GN2rocc}
-    \end{figure}
-\end{center}
-
-Turning to $c$-tagging, a similar large performance gained is obtained by the new \gls{gnn} family over \gls{dl1d}, although the change on the $t\bar{t}$ is more impressive for the $b$-jet ratio than for light-jet. This indicates a non-optimal choice for the flavour fraction $f^c_b$, which was set at 0.2 for all models.
+A comparison of the global performance of this \gls{gn2} model to the \gls{dl1d} and \gls{gn1} models is displayed in the $b$- and $c$-tagging \gls{roc} curves of Figures \ref{fig:GN2rocb} and \ref{fig:GN2rocc}. These results are taken from Ref \cite{ATL-PLOT-FTAG-2023-01}, for which the \gls{dl1d} model was retrained on the same dataset as \gls{gn2}, and the \gls{dl1r} and \gls{gn1} models are taken from Chapter \ref{chap-GN1}. \gls{gn2} delivers yet another significant boost to performance, drasticaly surpassing the \gls{gn1} rejections at all efficiencies considered. The largest improvement is again obtained at lower $b$-jet efficiencies. Compared to \gls{gn1}, \gls{gn2} delivers $\times 1.5$ ($\times 1.7$) the $c$-rejection (light-rejection) on $t\bar{t}$ at the 70\% $b$-tagging \gls{wp} and $\times 1.75$ ($\times 1.2$) on $Z'$ at 30\% \gls{wp}. With respect to \gls{dl1d}, the gains in $c$-rejection (light-rejection) are respectively close to $\times 3$ ($\times 2$) for $t\bar{t}$ and $\times 3.4$ ($\times 4$) on $Z'$. Concerning $c$-tagging, a similar large performance gained is obtained by the new \gls{gnn} family over \gls{dl1d}, although the change on the $t\bar{t}$ is more impressive for the $b$-jet ratio than for light-jet. This indicates a non-optimal choice for the flavour fraction $f^c_b$, which was set at 0.2 for all models.
 
 \section{GN2 supporting plots}\label{app-GN2sup}
-This section presents more plots in support of Chapter \ref{chap-GN2}. Figure \ref{apfig:GNxptc_eff} presents the $c$-tagging efficiency per bin for an overall $c$-tagging working point of 30\% per region displayed. 
+This section presents more plots in support of Chapter \ref{chap-GN2}. Figure \ref{apfig:GNxptc_eff} presents the $c$-tagging efficiency per bin for an overall $c$-tagging working point of 30\% per region displayed. Figure \ref{apfig:GNxptc_efffixedl} presents the $c$-tagging efficiency per bin for a per bin light-rejection of 50 for $t\bar{t}$ and 10 for $Z'$. The \gls{gn2} performance dominates across the board, except for the highest energy bin of the $Z'$. Figures \ref{apfig:GNxptc_efffixedl} presents the $c$- and light-rejection at an inclusive 70\% $b$-tagging \gls{wp}. The equivalent information for $c$-tagging at a $c$-tagging \gls{wp} of 30\% is displayed in Figures \ref{apfig:GNxptc_brej} and \ref{apfig:GNxptc_urej} for $b$- and light-rejection. 
+
+\begin{center}
+  \vspace{-1.cm}
+  \begin{figure}[h!]
+  \centerline{
+  \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/ttb.png}
+  \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/zpb.png}
+  }
+  \caption{The $c$- and light-rejections as a function of the $b$-jet tagging efficiency in the $t\bar{t}$ with $20 < p_T < 250$ GeV (left) and $Z'$ with $250 < p_T < 6000$ GeV (right) test samples, from \cite{ATL-PLOT-FTAG-2023-01}. Models compared are DL1d in orange, GN1 in turquoise, and GN2 in blue. The bottom plots show the ratio with respect to the DL1d performance. Flavour fractions are set at $f^b_c = 0.018$ for DL1d, 0.05 for GN1, and 0.1 for GN2. Shaded regions represent the binominal error band.}
+  \label{apfig:GN2rocb}
+  \bigskip
+  \centerline{
+  \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/ttc.png}
+  \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/ROCpublic/zpc.png}
+  }
+  \caption{The $b$- and light-rejections as a function of the $c$-jet tagging efficiency in the $t\bar{t}$ with $20 < p_T < 250$ GeV (left) and $Z'$ with $250 < p_T < 6000$ GeV (right) test samples, from \cite{ATL-PLOT-FTAG-2023-01}. Models compared are DL1d in orange, GN1 in turquoise, and GN2 in blue. The bottom plots show the ratio with respect to the DL1d performance. Flavour fractions are set at $f^c_b = 0.2$ for all taggers. Shaded regions represent the binominal error band.}
+  \label{apfig:GN2rocc}
+  \end{figure}
+\end{center}
 
 \begin{figure}[h!]
     \centering
@@ -117,8 +117,6 @@ This section presents more plots in support of Chapter \ref{chap-GN2}. Figure \r
     \label{apfig:GNxptc_eff}
 \end{figure} 
 
-Figure \ref{apfig:GNxptc_efffixedl} presents the $c$-tagging efficiency per bin for a per bin light-rejection of 50 for $t\bar{t}$ and 10 for $Z'$. The \gls{gn2} performance dominates across the board, except for the highest energy bin of the $Z'$. 
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\textwidth]{Images/FTAG/GN/GN2/pt_plots/pt_ttbar_c_eff_fixedlight.png}
@@ -127,7 +125,6 @@ Figure \ref{apfig:GNxptc_efffixedl} presents the $c$-tagging efficiency per bin 
     \label{apfig:GNxptc_efffixedl}
   \end{figure} 
 
-Figures \ref{apfig:GNxptc_efffixedl} presents the $c$- and light-rejection at an inclusive 70\% $b$-tagging \gls{wp}. The equivalent information for $c$-tagging at a $c$-tagging \gls{wp} of 30\% is displayed in Figures \ref{apfig:GNxptc_brej} and \ref{apfig:GNxptc_urej} for $b$- and light-rejection. 
 % Rej c - btagging
 \begin{figure}[h!]
     \centering
@@ -164,4 +161,5 @@ Figures \ref{apfig:GNxptc_efffixedl} presents the $c$- and light-rejection at an
     \label{apfig:GNxptc_urej}
   \end{figure} 
 
-  \input{Appendices/GN2x.tex}
+\newpage  
+\input{Appendices/GN2x.tex}
